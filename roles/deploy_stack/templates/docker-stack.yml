@@ -1,0 +1,408 @@
+version: "3.8"
+
+networks:
+ dbnet:
+  external: false
+  driver: overlay
+  ipam:
+   driver: default
+   config:
+    - subnet: 192.168.100.0/24
+ intnet:
+  external: false
+  driver: overlay
+  # ipam:
+  #  driver: default
+  #  config:
+  #   - subnet: 192.168.200.0/24
+#  extnet:
+#   driver: overlay
+#   ipam:
+#    driver: default
+#    config:
+#     - subnet: 192.168.100.0/24
+
+
+
+services:
+  db:
+    image: postgres:14.2
+    # deploy:
+    #   mode: replicated
+    #   replicas: 1
+    #   placement:
+    #     constraints:
+    #     - node.role == manager
+    environment:
+      POSTGRES_PASSWORD: gitea
+      POSTGRES_USER: gitea
+      POSTGRES_DB: gitea
+    networks:
+     - dbnet
+    volumes:
+     - /data/postgres-db:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer:4.8.1
+    # hostname: dba.localdomain
+    restart: always
+    deploy:
+      # mode: replicated
+      # replicas: 1
+      # placement:
+      #   constraints:
+      #   - node.role == worker
+      labels:
+          - "traefik.enable=true"
+          - "traefik.http.routers.dba.rule=Host(`dba.localdomain`)"
+          - "traefik.http.routers.dba.priority=50"
+          - "traefik.http.routers.dba.entrypoints=websecure"
+          - "traefik.http.services.dba.loadbalancer.server.port=8080"
+          - "traefik.http.routers.dba.tls=true"
+          - "traefik.docker.network=main_intnet"
+    # ports:
+    #  - 8070:8080
+    networks:
+      - dbnet
+      - intnet
+
+
+  ldap_server:
+    image: osixia/openldap:stable
+    # deploy:
+    #   mode: replicated
+    #   replicas: 1
+    #   placement:
+    #     constraints:
+    #     - node.role == manager
+    environment:
+      LDAP_ADMIN_PASSWORD: test1234
+      LDAP_ORGANISATION: Unige VCC
+      LDAP_DOMAIN: ldap.vcc.unige.it
+    command: [--copy-service]
+    ports:
+      - 389:389
+    volumes:
+      - /data/ldap/ldap_data:/var/lib/ldap
+      - /data/ldap/ldap_config:/etc/ldap/slapd.d
+      - /data/ldap/ldif/bootstrap.ldif:/container/service/slapd/assets/config/bootstrap/ldif/50-bootstrap.ldif    
+    networks:
+      - dbnet
+
+  ldap_server_admin:
+    image: osixia/phpldapadmin:0.7.2
+    # deploy:
+    #   mode: replicated
+    #   replicas: 1
+    #   placement:
+    #     constraints:
+    #     - node.role == manager
+    ports:
+      - 8090:80
+    environment:
+      PHPLDAPADMIN_LDAP_HOSTS: ldap_server
+      PHPLDAPADMIN_HTTPS: 'false'
+    networks:
+      - intnet
+      - dbnet
+      # - extnet
+
+  gitea:
+    image: 127.0.0.1:5000/my_gitea:41
+    hostname: git.localdomain
+    build: /data/gitea
+    deploy:
+      mode: global
+      # mode: replicated
+      # replicas: 1
+      # placement:
+      #   constraints:
+      #   - node.role == manager
+    # percorso all'interno del container
+    # entrypoint: /data/entrypoint.sh
+    environment:
+      USER: git
+      USER_UID: 1000
+      USER_GID: 1000
+      GITEA__database__DB_TYPE: postgres
+      GITEA__database__HOST: db:5432
+      GITEA__database__NAME: gitea
+      GITEA__database__USER: gitea
+      GITEA__database__PASSWD: gitea
+      GITEA__security__INSTALL_LOCK: "true"
+      GITEA__security__SECRET_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+      GITEA__server__HTTP_PORT: 80
+    # restart: always
+    networks:
+      - intnet
+      - dbnet
+    volumes:
+      - /data/gitea:/data
+      - /data/time/timezone:/etc/timezone:ro
+      - /data/time/localtime:/etc/localtime:ro
+      - /data/gitea/app.ini:/data/gitea/conf/app.ini
+    # ports:
+      # - 3000:3000
+      # - 222:22
+      # - 8080:3000
+      # - 2221:22
+    depends_on:
+      - db
+      - ldap_server
+      - ldap_server_admin
+
+  modsecurity:
+      image: owasp/modsecurity-crs:3.3-nginx
+      logging:
+        driver: json-file
+        options:
+          tag: "modsecurity"
+      environment:
+        BACKEND: http://git.localdomain
+        PROXY: "1"
+        DNS_SERVER: '127.0.0.11'
+      volumes:
+        - /data/modsecurity/nginx.conf.template:/etc/nginx/templates/nginx.conf.template
+        # - /data/modsecurity/modsecurity.conf:/etc/modsecurity.d/modsecurity-override.conf
+        # - /data/modsecurity/default.template:/etc/nginx/conf.d/default.template
+      deploy:
+      #   placement:
+      #     constraints:
+      #       - node.role == manager
+        labels:
+          - "traefik.enable=true"
+          - "traefik.http.routers.git.rule=Host(`git.localdomain`)"
+          - "traefik.http.routers.git.entrypoints=websecure"
+          - "traefik.http.routers.git.tls=true"
+          - "traefik.http.routers.git.priority=50"
+          # - "traefik.http.services.git.loadBalancer.sticky.cookie=true"
+          # - "traefik.http.services.git.loadBalancer.sticky.cookie.name=git"
+          # - "traefik.backend.loadbalancer.stickiness=true"
+          - "traefik.http.services.git.loadbalancer.server.port=80"
+      networks:
+        - intnet
+
+
+  # modsecurity:
+  #     image: owasp/modsecurity-crs:3.3-nginx
+  #     logging:
+  #       driver: json-file
+  #       options:
+  #         tag: "modsecurity"
+  #     environment:
+  #       UPSTREAM: http://git.localdomain
+  #     volumes:
+  #       - /data/modsecurity/modsecurity.conf:/etc/modsecurity.d/modsecurity-override.conf
+  #       - /data/modsecurity/default.template:/etc/nginx/conf.d/default.template
+  #     command:
+  #       - "/bin/sh"
+  #       - "-c"
+  #       - "envsubst '$$UPSTREAM' < /etc/nginx/conf.d/default.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+  #     deploy:
+  #       placement:
+  #         constraints:
+  #           - node.role == manager
+  #       labels:
+  #         - "traefik.enable=true"
+  #         - "traefik.http.routers.git.rule=Host(`git.localdomain`)"
+  #         - "traefik.http.routers.git.entrypoints=websecure"
+  #         - "traefik.http.routers.git.tls=true"
+  #         - "traefik.http.routers.git.priority=50"
+  #         # - "traefik.http.services.git.loadBalancer.sticky.cookie=true"
+  #         # - "traefik.http.services.git.loadBalancer.sticky.cookie.name=git"
+  #         # - "traefik.backend.loadbalancer.stickiness=true"
+  #         - "traefik.http.services.git.loadbalancer.server.port=80"
+  #     networks:
+  #       - intnet
+  
+  traefik:
+      image: traefik:2.7
+      hostname: traefik
+      command:
+          - "--api=true"
+          - "--api.debug=true"
+          - "--api.insecure=true"
+          - "--providers.docker.endpoint=unix:///var/run/docker.sock"
+          - "--providers.docker.swarmMode=true"
+          - "--providers.docker.exposedbydefault=false"
+          - "--entrypoints.web.address=:80"
+          - "--entrypoints.websecure.address=:443"
+          - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+          - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      ports:
+          - "80:80"
+          - "8080:8080"
+          - "443:443"
+      volumes:
+          - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      deploy:
+          placement:
+              constraints:
+                  - node.role == manager
+      
+      networks: 
+          - intnet
+          # - extnet  
+      depends_on:
+          - db
+
+
+  node-exporter:
+      hostname: node-exporter
+      image: prom/node-exporter:v1.3.1
+      volumes:       
+          - /etc/localtime:/etc/localtime:ro
+          - /etc/timezone:/etc/timezone:ro
+          - /proc:/host/proc:ro       
+          - /sys:/host/sys:ro       
+          - /:/rootfs:ro       
+      command:       
+          - '--path.procfs=/host/proc'       
+          - '--path.sysfs=/host/sys'       
+          - '--path.rootfs=/host'       
+          - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'  
+      # ports:
+      #     - '9100:9100'
+      deploy:       
+          mode: global 
+          # placement:
+          #     constraints:
+          #     - node.role == worker
+          # labels:
+          #     - "traefik.enable=true"
+          #     - "traefik.http.routers.node-exporter.rule=Host(`node-exporter`)"
+          #     - "traefik.http.routers.node-exporter.priority=50"
+          #     - "traefik.http.routers.node-exporter.entrypoints=websecure"
+          #     - "traefik.http.services.node-exporter.loadbalancer.server.port=9100"
+          #     - "traefik.http.routers.node-exporter.tls=true"
+      networks:
+          - intnet
+
+  cadvisor:
+      hostname: cadvisor
+      image: google/cadvisor:v0.32.0
+      #privileged: true
+      volumes:
+          - /:/rootfs:ro 
+          - /var/run:/var/run:rw
+          - /sys:/sys:ro 
+          - /var/lib/docker/:/var/lib/docker:ro
+          - /etc/localtime:/etc/localtime:ro
+          - /etc/timezone:/etc/timezone:ro 
+          # - /dev/disk/:/dev/disk:ro #
+      command:
+          - '-port=8098'
+      # ports:
+      #     - 8084:8080
+      deploy:
+          mode: global
+          # placement:
+          #     constraints:
+          #     - node.role == worker
+      networks:
+          - intnet
+
+  loki:
+    image: grafana/loki:main
+    hostname: loki
+    restart: always
+    # deploy:
+    #       placement:
+    #           constraints:
+    #           - node.role == manager
+    depends_on: 
+          - node-exporter
+          - cadvisor
+    # ports:
+    #   - 127.0.0.1:3100:3100
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - /data/monitoring/loki/config.yaml:/etc/loki/config.yaml
+      - /data/monitoring/loki:/data/loki
+    networks:
+      - intnet
+
+  promtail:
+    image: grafana/promtail:main
+    hostname: promtail
+    restart: always
+    depends_on: 
+          - loki
+    deploy:
+        mode: global
+    volumes:
+      - /var/log:/var/log
+      - /var/lib/docker/containers:/var/lib/docker/containers
+      - /data/monitoring/promtail:/etc/promtail-config/
+    command: -config.file=/etc/promtail-config/promtail.yml
+    networks:
+      - intnet
+
+  prometheus:
+      image: prom/prometheus:main
+      hostname: prometheus
+      restart: always
+      depends_on: 
+          - node-exporter
+          - cadvisor
+          - loki
+          - promtail
+      volumes:
+          - /data/monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+          - /data/monitoring/prometheus/alert.rules:/etc/prometheus/alert.rules
+      command:
+          - '--config.file=/etc/prometheus/prometheus.yml'
+          - '--storage.tsdb.path=/prometheus'
+          - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+          - '--web.console.templates=/usr/share/prometheus/consoles'
+      ports:
+          - '9090:9090'  
+      # deploy:
+      #   placement:
+      #     constraints:
+      #         - node.role == manager
+        # non usiamo i labels perchè non ci serve passare attraverso traefik
+        # labels:
+        #   - "traefik.enable=true"
+        #   - "traefik.http.routers.prometheus.rule=Host(`prometheus.localdomain`)"
+        #   - "traefik.http.routers.prometheus.priority=50"
+        #   - "traefik.http.routers.prometheus.entrypoints=websecure"
+        #   - "traefik.http.routers.prometheus.tls=true"
+        #   - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
+      networks:
+          - intnet
+
+  grafana:
+      image: grafana/grafana:main
+      depends_on: 
+          - prometheus
+      volumes: 
+          - /etc/localtime:/etc/localtime:ro
+          - /etc/timezone:/etc/timezone:ro
+          - /data/monitoring/grafana:/var/lib/grafana
+          - /data/monitoring/grafana/data_sources:/etc/grafana/provisioning/datasources
+          - /data/monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards/
+      environment:
+          - GF_SECURITY_ADMIN_USER=${ADMIN_USER:-admin}
+          - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin}
+          - GF_SERVER_DOMAIN=localhost:3000
+          - GF_SERVER_ROOT_URL=%(protocol)s://%(domain)s
+      depends_on:
+          - prometheus
+      # ports:
+      #     - "3000:3000"
+      deploy:
+      #     placement:
+      #         constraints:
+      #         # - node.role == manager
+      #         - node.role == worker
+          labels:
+              - "traefik.enable=true"
+              - "traefik.http.routers.mon.rule=Host(`mon.localdomain`)"
+              - "traefik.http.routers.mon.priority=50"
+              - "traefik.http.routers.mon.entrypoints=websecure"
+              - "traefik.http.services.mon.loadbalancer.server.port=3000"
+              - "traefik.http.routers.mon.tls=true"
+      networks:
+          - intnet
+

@@ -1,0 +1,121 @@
+1,4c1,2
+< [DEFAULT]
+< APP_NAME = VCC exam
+< RUN_USER = gitea
+< RUN_MODE = test
+---
+> APP_NAME = Gitea: Git with a cup of tea
+> RUN_MODE = prod
+7,9c5,8
+< ENABLE_PUSH_CREATE_USER = true
+< ENABLE_PUSH_CREATE_ORG = true
+< DISABLE_STARS = true
+---
+> ROOT = /data/git/repositories
+> 
+> [repository.local]
+> LOCAL_COPY_PATH = /data/gitea/tmp/local-repo
+12,13c11
+< FILE_MAX_SIZE = 10
+< MAX_FILES = 3
+---
+> TEMP_PATH = /data/gitea/uploads
+16,29c14,23
+< PROTOCOL = http
+< DOMAIN = {{ ansible_default_ipv4['address'] }}
+< ROOT_URL = %(PROTOCOL)s://%(DOMAIN)s:%(HTTP_PORT)s/
+< 
+< HTTP_ADDR = 0.0.0.0
+< HTTP_PORT = 3000
+< 
+< START_SSH_SERVER = false
+< 
+< ENABLE_GZIP = true
+< LFS_START_SERVER = true
+< OFFLINE_MODE = true
+< 
+< APP_DATA_PATH = /var/lib/gitea/data
+---
+> APP_DATA_PATH    = /data/gitea
+> DOMAIN           = localhost
+> SSH_DOMAIN       = localhost
+> HTTP_PORT        = 3000
+> ROOT_URL         =
+> DISABLE_SSH      = false
+> SSH_PORT         = 22
+> SSH_LISTEN_PORT  = 22
+> LFS_START_SERVER = false
+> LFS_CONTENT_PATH = /data/git/lfs
+31a26
+> PATH    = /data/gitea/gitea.db
+33,65c28,62
+< HOST = 127.0.0.1
+< NAME = gitea
+< USER = gitea
+< PASSWD = giteaPass
+< 
+< [indexer]
+< ISSUE_INDEXER_TYPE = db
+< 
+< [security]
+< INSTALL_LOCK = true
+< 
+< [service]
+< DISABLE_REGISTRATION = true
+< REQUIRE_SIGNIN_VIEW = true
+< 
+< [session]
+< PROVIDER = db
+< 
+< [picture]
+< DISABLE_GRAVATAR = true
+< 
+< [cron]
+< ENABLED = true
+< 
+< [metrics]
+< ENABLED = true
+< TOKEN = metricsToken
+< 
+< [log]
+< LEVEL = debug
+< ENABLE_ACCESS_LOG = true
+< ENABLE_SSH_LOG = true
+< 
+---
+> HOST    = db:5432
+> NAME    = gitea
+> USER    = gitea
+> PASSWD  = gitea
+> LOG_SQL = false                             
+>                                                    
+> [indexer]                                               
+> ISSUE_INDEXER_PATH = /data/gitea/indexers/issues.bleve
+>                      
+> [session]                     
+> PROVIDER_CONFIG = /data/gitea/sessions
+>                             
+> [picture]                   
+> AVATAR_UPLOAD_PATH            = /data/gitea/avatars
+> REPOSITORY_AVATAR_UPLOAD_PATH = /data/gitea/repo-avatars
+>                                                       
+> [attachment]         
+> PATH = /data/gitea/attachments
+>                                       
+> [log]                                                               
+> MODE      = console              
+> LEVEL     = info                                   
+> ROUTER    = console                                                                                                                     
+> ROOT_PATH = /data/gitea/log
+>                  
+> [security]                            
+> INSTALL_LOCK                  = true
+> SECRET_KEY                    = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+> REVERSE_PROXY_LIMIT           = 1
+> REVERSE_PROXY_TRUSTED_PROXIES = *                  
+> INTERNAL_TOKEN                = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NDc3MjEyODV9.0VCkZuSrlhFvigERbhYas9yZY0GoO-5XWvE-WMtSbx
+>                            
+> [service]        
+> DISABLE_REGISTRATION = false          
+> REQUIRE_SIGNIN_VIEW  = false
+\ No newline at end of file

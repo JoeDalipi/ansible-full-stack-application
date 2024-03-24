@@ -1,0 +1,11 @@
+#!/bin/sh
+
+while ! nc -z $GITEA__database__HOST; do sleep 1; done;
+
+if ! [ -f /data/gitea.initialized ]; then
+    gitea-cli.sh migrate
+    gitea-cli.sh admin auth add-ldap --name ansible-ldap --host 127.0.0.1 --port 389 --security-protocol unencrypted --user-search-base dc=ldap,dc=vcc,dc=unige,dc=it --admin-filter "(objectClass=giteaAdmin)" --user-filter "(&(objectClass=inetOrgPerson)(uid=%s))" --username-attribute uid --firstname-attribute givenName --surname-attribute surname --email-attribute mail --bind-dn cn=admin,dc=ldap,dc=vcc,dc=unige,dc=it --bind-password test1234 --allow-deactivate-all
+    touch /data/gitea.initialized
+fi
+
+exec /usr/bin/entrypoint

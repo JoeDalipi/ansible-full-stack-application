@@ -1,0 +1,90 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - update
+    - role: mrlesmithjr.netplan
+      become: yes
+      # This role will do nothing unless netplan_enabled is true.
+      netplan_enabled: true
+      
+      # netplan config file to overwite
+      netplan_config_file: /etc/netplan/00-installer-config.yaml
+
+      # Ubuntu 18.04, for example, defaults to using networkd.
+      netplan_renderer: networkd
+      # Configuration defined below will be written to the file defined
+      # above in `netplan_config_file`.
+      netplan_configuration:
+        network:
+          version: 2
+          ethernets:
+            ens33:
+              addresses:
+                - "{{ ext_ip }}/24"
+              gateway4: "{{ gateway }}"
+              nameservers:
+                addresses: [ 8.8.8.8, 8.8.4.4]
+            ens37:
+              addresses: 
+                - "{{ storage_ip }}/24"
+            # ens38:
+            #   addresses:
+            #     - "{{ ansible_host }}/24"
+
+- hosts: all
+  become: true
+  tasks:
+  - name: Apply netplan
+    command: sudo netplan apply
+  - name: Create /data directory
+    ansible.builtin.file:
+      path: /data
+      state: directory
+      mode: '0755'
+
+- hosts: all
+  become: true
+  roles:
+    - geerlingguy.docker
+    - swarm
+    - nfs
+
+- hosts: node1
+  become: true
+  roles:
+  - registry
+
+- hosts: all
+  become: true
+  tasks:
+  - name: Login to the Docker registry
+    community.docker.docker_login:
+      username: vcc
+      password: vcc
+      registry_url: http://127.0.0.1:5000
+    register: docker_registry_login
+    until: docker_registry_login is success
+    retries: 300
+    delay: 1
+
+# Build and push custom docker images into registry
+- hosts: node1
+  become: true
+  tasks:
+  - name: build and push custom gitea image to local registry
+    community.docker.docker_image:
+      build:
+          path: /data/dockerfiles/gitea
+      name: my_gitea
+      repository: 127.0.0.1:5000/my_gitea
+      push: yes
+      source: build
+      tag: 41
+
+- hosts: node1
+  become: true
+  roles:
+  - deploy_stack
+
+
