@@ -1,0 +1,16 @@
+---
+- name: Init a new swarm on first node
+  community.docker.docker_swarm:
+    advertise_addr: "{{ ext_ip }}"
+    state: present
+  register: docker_swarm
+  when: inventory_hostname == 'node1'
+
+- name: Join swarm on second node
+  community.docker.docker_swarm:
+    advertise_addr: "{{ ext_ip }}"
+    join_token: "{{ hostvars['node1']['docker_swarm']['swarm_facts']['JoinTokens']['Worker'] }}"
+    remote_addrs:
+    - "{{ hostvars['node1']['ext_ip'] }}"
+    state: join
+  when: inventory_hostname == 'node2'

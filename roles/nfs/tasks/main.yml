@@ -1,0 +1,25 @@
+---
+- name: Copy /etc/exports on first server
+  ansible.builtin.template:
+    src: exports
+    dest: /etc/exports
+  when: inventory_hostname == 'node1'
+
+- name: Install NFS server on first server
+  ansible.builtin.apt:
+    name: nfs-kernel-server
+  when: inventory_hostname == 'node1'
+
+- name: Install NFS client on second server
+  ansible.builtin.apt:
+    name: nfs-common
+  when: inventory_hostname == 'node2'
+
+- name: Mount the NFS share on second server
+  ansible.posix.mount:
+    path: /data
+    src: "{{ hostvars['node1']['storage_ip'] }}:/data"
+    fstype: nfs
+    opts: vers=4
+    state: mounted
+  when: inventory_hostname == 'node2'

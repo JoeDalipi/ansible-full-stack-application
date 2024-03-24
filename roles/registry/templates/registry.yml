@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  registry:
+    image: registry:2.7.1
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+        - node.role == manager
+    ports:
+    - 5000:5000
+    - 127.0.0.1:5001:5001
+    volumes:
+    - /data/docker-registry:/var/lib/registry
+    - /data/registry.config.yml:/etc/docker/registry/config.yml:ro
+    - /data/registry.htpasswd:/etc/registry.htpasswd:ro

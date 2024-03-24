@@ -1,0 +1,2 @@
+# Managed via Ansible
+/data {{ hostvars['node2']['storage_ip'] }}(no_root_squash,rw) 

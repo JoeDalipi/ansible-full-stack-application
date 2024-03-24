@@ -1,0 +1,157 @@
+# prepare postgres directories
+- name: Create /data/postgres-db directory
+  ansible.builtin.file:
+    path: /data/postgres-db
+    state: directory
+    mode: '0755'
+
+# prepare ldap directories and files
+- name: Create ldap directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: '0755'
+  loop:
+  - /data/ldap/ldap_data
+  - /data/ldap/ldap_config
+  - /data/ldap/ldif
+  - /data/ldap/custom_schema
+
+- name: Copy .ldif file to remote /data/ldap/ldif dir
+  ansible.builtin.template:
+    src: bootstrap.ldif
+    dest: /data/ldap/ldif
+
+# prepare gitea directories and files
+- name: Create time and gitea directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: '0777'
+  loop:
+  - /data/time
+  - /data/gitea
+
+- name: Copy timezone/localtime files
+  ansible.builtin.template:
+    src: '{{item}}'
+    dest: '/data/time/'
+  loop:
+  - timezone
+  - localtime
+
+- name: copy app.ini gitea conf file
+  ansible.builtin.template:
+    src: app.ini
+    dest: /data/gitea/app.ini
+    mode: '0777'
+
+# Prepare modsecurity/nginx directories and files
+- name: Create modsecurity/nginx directories
+  ansible.builtin.file:
+    path: /data/modsecurity
+    state: directory
+    mode: '0755'
+
+- name: Copy modsec/nginx conf files
+  ansible.builtin.template:
+    src: '{{item}}'
+    dest: '/data/modsecurity/'
+  loop:
+  - default.template
+  - modsecurity.conf
+  - nginx.conf.template
+
+# Prepare prometheus/node-exporter/cadvisor directories and files
+- name: Create /data/monitoring/prometheus directory
+  ansible.builtin.file:
+    path: /data/monitoring/prometheus
+    state: directory
+    mode: '0755'
+
+- name: Copy promethes conf files
+  ansible.builtin.copy:
+    src: '{{item}}'
+    dest: '/data/monitoring/prometheus/'
+    mode: '0666'
+  loop:
+  - prometheus/alert.rules
+  - prometheus/prometheus.yml
+
+# Prepare loki directory and files
+- name: Create /data/monitoring/loki directory
+  ansible.builtin.file:
+    path: /data/monitoring/loki
+    state: directory
+    mode: '0777'
+
+- name: Copy loki conf files
+  ansible.builtin.copy:
+    src: '{{item}}'
+    dest: '/data/monitoring/loki/'
+    mode: '0666'
+  loop:
+  - loki/config.yaml
+
+# Prepare prmotail directory and files
+- name: Create /data/monitoring/promtail directory
+  ansible.builtin.file:
+    path: /data/monitoring/promtail
+    state: directory
+    mode: '0777'
+
+- name: Copy promtail conf file
+  ansible.builtin.copy:
+    src: 'promtail/promtail.yml'
+    dest: '/data/monitoring/promtail/promtail.yml'
+    mode: '0666'
+
+# Prepare grafana directory and files
+- name: Create /data/monitoring/grafana directories
+  ansible.builtin.file:
+    path: '{{item}}'
+    state: directory
+    mode: '0777'
+  loop:
+  - /data/monitoring/grafana/data_sources
+  - /data/monitoring/grafana/dashboards
+
+- name: Copy grafana dashboards default conf files
+  ansible.builtin.copy:
+    src: 'grafana/dashboards/default.yaml'
+    dest: '/data/monitoring/grafana/dashboards'
+    mode: '0666'
+
+- name: Copy grafana data source default conf files
+  ansible.builtin.copy:
+    src: '{{item}}'
+    dest: '/data/monitoring/grafana/data_sources'
+    mode: '0666'
+  loop:
+  - 'grafana/data_sources/default.yaml'
+
+- name: Copy grafana dashboards and  default conf files
+  ansible.builtin.copy:
+    src: '{{item}}'
+    dest: '/data/monitoring/grafana/dashboards'
+    mode: '0666'
+  loop:
+  - 'grafana/dashboards/prometheus-system_rev5.json'
+  - 'grafana/dashboards/default.yaml'
+  - 'grafana/dashboards/modsecurity_logs.json'
+  - 'grafana/dashboards/cadvisor.json'
+  - 'grafana/dashboards/node-exporter.json'
+
+# copy main stack file to remote and deploy it
+- name: Copy the stack file
+  ansible.builtin.template:
+    src: docker-stack.yml
+    dest: /opt/docker-stack.yml
+
+- name: Deploy main stack from a compose file
+  community.docker.docker_stack:
+    state: present
+    name: main
+    compose:
+    - /opt/docker-stack.yml
+    with_registry_auth: true

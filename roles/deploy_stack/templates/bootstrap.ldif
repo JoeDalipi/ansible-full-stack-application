@@ -1,0 +1,2639 @@
+# You need this only if you did not create it automatically
+dn: dc=ldap,dc=vcc,dc=unige,dc=it
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: UniGE VCC
+dc: ldap
+structuralObjectClass: organization
+entryUUID: ee4a09e6-f811-103b-8454-eb5ba17c109f
+creatorsName: cn=admin,dc=ldap,dc=vcc,dc=unige,dc=it
+createTimestamp: 20211223075859Z
+entryCSN: 20211223075859.689056Z#000000#000#000000
+modifiersName: cn=admin,dc=ldap,dc=vcc,dc=unige,dc=it
+modifyTimestamp: 20211223075859Z
+
+# You need this only if you did not create it automatically
+dn: cn=admin,dc=ldap,dc=vcc,dc=unige,dc=it
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+userPassword:: e1NTSEF9QlhPMWZybkpYaUUxVWkxN2Jma1REcmh0MFhaUWd5NTc=
+structuralObjectClass: organizationalRole
+entryUUID: ee81bb34-f811-103b-8455-eb5ba17c109f
+creatorsName: cn=admin,dc=ldap,dc=vcc,dc=unige,dc=it
+createTimestamp: 20211223075900Z
+entryCSN: 20211223075900.054061Z#000000#000#000000
+modifiersName: cn=admin,dc=ldap,dc=vcc,dc=unige,dc=it
+modifyTimestamp: 20211223075900Z
+
+# For usage with `slapadd -b 'cn=config'`
+dn: cn=gitea,cn=schema,cn=config
+cn: gitea
+objectClass: olcSchemaConfig
+olcObjectClasses: ( 1.3.6.1.4.1.1337.1 NAME 'giteaAdmin'
+  DESC 'A Gitea administrator'
+  AUXILIARY )
+
+# Users below
+dn: uid=schiavosilvia,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: schiavosilvia
+cn: Guglielmo
+sn: Salata
+mail: pina69@tiscali.it
+userPassword: N085YjZQeUFiOA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=fortunata93,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: fortunata93
+cn: Enrico
+sn: Balla
+mail: holivetti@luzi-luzi.com
+userPassword: MzllMnh2dmZ4Rw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=lorettaquerini,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: lorettaquerini
+cn: Pierina
+sn: Volterra
+mail: michele64@alice.it
+userPassword: WjI1bVBPZ3cxaw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=paulina08,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: paulina08
+cn: Bruno
+sn: Pignatti
+mail: ermesfoconi@samele.net
+userPassword: VVhWNnJHQXA3TQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=damiano69,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: damiano69
+cn: Geronimo
+sn: Ostinelli
+mail: sandiraffaello@gmail.com
+userPassword: N2NWTXVOdmY3dQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=pquasimodo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: pquasimodo
+cn: Eleanora
+sn: Michelangeli
+mail: ibonanno@gibilisco.com
+userPassword: NjI4NUd5dkRzdA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=libertogaggini,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: libertogaggini
+cn: Umberto
+sn: Errani
+mail: leoneromana@libero.it
+userPassword: UUFKM3J2Y3M2ZQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=marissa82,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: marissa82
+cn: Pietro
+sn: Traversa
+mail: ggarozzo@catalano.org
+userPassword: eWRLMENZaG5aSw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=vitocalgari,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: vitocalgari
+cn: Fredo
+sn: Sinisi
+mail: marina95@yahoo.com
+userPassword: NU96R1BicDFCRA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=iparisi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: iparisi
+cn: Guarino
+sn: Caccioppoli
+mail: imonduzzi@mazzi.it
+userPassword: N0pCZWZ2c3VqNg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=severinogargallo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: severinogargallo
+cn: Elmo
+sn: Strangio
+mail: hcalvo@petrucci.it
+userPassword: VWRpNmViUW10ZQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ornellagemito,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ornellagemito
+cn: Annalisa
+sn: Belletini
+mail: ruggero84@live.com
+userPassword: a0g2R0pzV2tiQw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=mdonarelli,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: mdonarelli
+cn: Gilberto
+sn: Trincavelli
+mail: speriilaria@boezio.eu
+userPassword: YTZFcERiQWdKag==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ciprianoodescalchi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ciprianoodescalchi
+cn: Irma
+sn: Giannone
+mail: zbasadonna@gmail.com
+userPassword: M090UnJsdEtrSw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ofallaci,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ofallaci
+cn: Lando
+sn: Cignaroli
+mail: zpirelli@trevisani-luciani.it
+userPassword: SDI3c0NIZU1qaA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=hgaluppi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: hgaluppi
+cn: Monica
+sn: Porcellato
+mail: ventogianpaolo@ferrata-boccaccio.it
+userPassword: UUlobEs4cXAySw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=milenapascarella,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: milenapascarella
+cn: Donna
+sn: Morgagni
+mail: beatrice09@valguarnera.it
+userPassword: M1hwbTIwTEc1Zw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=zairagabbana,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: zairagabbana
+cn: Torquato
+sn: Bondumier
+mail: claudiogabrieli@libero.it
+userPassword: U0Y1STlwaFY3WA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=bertoluccimatteo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: bertoluccimatteo
+cn: Nina
+sn: Navarria
+mail: sonia02@tin.it
+userPassword: eTRKQUZKczExVQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=damiano49,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: damiano49
+cn: Ludovico
+sn: Vitturi
+mail: sabatino87@tim.it
+userPassword: WHJ3MUo4NWZGNA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=martino45,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: martino45
+cn: Antonia
+sn: Crispi
+mail: vregge@gmail.com
+userPassword: RzI5RVE4dHFDQw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=rembrandt97,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: rembrandt97
+cn: Piergiuseppe
+sn: Bonolis
+mail: greggioermanno@orlando.com
+userPassword: VHZ1WlRyZ0QzNA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=petruccigianni,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: petruccigianni
+cn: Eleanora
+sn: U2VncsOo
+mail: ronaldobettoni@blasi.it
+userPassword: SzNIMUtXQmZNcw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=pietro19,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: pietro19
+cn: Amico
+sn: Falcone
+mail: alessandro65@zacchia.com
+userPassword: MWdoWEFnSlc3SQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=umbertopagliaro,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: umbertopagliaro
+cn: Mario
+sn: Saraceno
+mail: romolo40@lucchesi.it
+userPassword: Q2dWemVsNmY0Nw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=luisatrentini,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: luisatrentini
+cn: Iolanda
+sn: Bandello
+mail: etoso@gmail.com
+userPassword: MGxNdENkcnJySg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=bertoluccimirko,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: bertoluccimirko
+cn: Jolanda
+sn: Rensi
+mail: cristoforettiadriano@letta.it
+userPassword: MEhpZ3hJdFYxYQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ginesioalphons,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ginesioalphons
+cn: Cristina
+sn: Caruso
+mail: ansaldo30@libero.it
+userPassword: dzB3UWhjZ2FxTg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=vpiccio,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: vpiccio
+cn: Dolores
+sn: Ligorio
+mail: salvatore37@tin.it
+userPassword: MzZuTzBiTlJCUg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=berniniguido,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: berniniguido
+cn: Ottone
+sn: Visintini
+mail: sofficiclelia@strangio-respighi.com
+userPassword: aTJYOXlzQUFPTA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=benito87,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: benito87
+cn: Coluccio
+sn: Barillaro
+mail: goffredoborsiere@tin.it
+userPassword: bjFFMk12MTM4TQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=dinaconte,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: dinaconte
+cn: Gaetano
+sn: Broggini
+mail: mastandrealara@hotmail.com
+userPassword: OXJ3aXg0V1l1Sw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=daria10,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: daria10
+cn: Valentina
+sn: Vattimo
+mail: pomponio49@alighieri.com
+userPassword: ZmFpdFRER2toMQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=greco22,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: greco22
+cn: Paola
+sn: Tamburini
+mail: renzo08@outlook.com
+userPassword: OUxZVml4d0NTNg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=abaroffio,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: abaroffio
+cn: Antonia
+sn: Morucci
+mail: nataliasatriani@matteotti-altera.it
+userPassword: VTRGQWh1UW5seQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=giuseppe90,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: giuseppe90
+cn: Ivo
+sn: Delle
+mail: hgalilei@puccini.net
+userPassword: NzBIU0dSYkY5Ug==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=brunellogustavo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: brunellogustavo
+cn: Giampaolo
+sn: Luzi
+mail: tebaldiarsenio@palumbo-soranzo.eu
+userPassword: NXhFQXpsOWZpNg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=fbasso,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: fbasso
+cn: Micheletto
+sn: Nitto
+mail: angelinamalpighi@hotmail.it
+userPassword: OEVURGFzUks1NQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=sdovara,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: sdovara
+cn: Gaspare
+sn: Baresi
+mail: matteo81@morrocco-schiavo.it
+userPassword: NUl0MlNMZ2J0QQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=enzo63,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: enzo63
+cn: Pomponio
+sn: Callegaro
+mail: sgarbitatiana@guarana.it
+userPassword: Yzh2aVpIVHozdg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=leonardo16,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: leonardo16
+cn: Vincentio
+sn: Porzio
+mail: milococci@jovinelli-bernetti.net
+userPassword: RmJRWXFpUmY1Sw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=arsenio67,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: arsenio67
+cn: Gianpaolo
+sn: Scaramucci
+mail: luciasalandra@fastwebnet.it
+userPassword: RjVONVpTMU14ZQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=romana49,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: romana49
+cn: Temistocle
+sn: Vergerio
+mail: liberto47@libero.it
+userPassword: YTJYOWJ3am81Mg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=marzoratigabriele,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: marzoratigabriele
+cn: Pomponio
+sn: Ferragamo
+mail: vcamiscione@villarosa.com
+userPassword: ZzJPblN1OW5OTw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=tencallagiulia,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: tencallagiulia
+cn: Danilo
+sn: Lattuada
+mail: adelmopolesel@tele2.it
+userPassword: UWZLOVZtZEtZZw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=scarpafabio,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: scarpafabio
+cn: Dina
+sn: Ferrara
+mail: hsagnelli@virgilio.it
+userPassword: OWtwZkJIRXNPdg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=piccinnistefani,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: piccinnistefani
+cn: Ruggero
+sn: Surian
+mail: qpolesel@orengo.com
+userPassword: MVg1VEZmUHZLQg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=giampierocuriel,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: giampierocuriel
+cn: Giovanna
+sn: Bettoni
+mail: sandramantegna@polesel.com
+userPassword: c3RVTHVaSnByNg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=drusoeugenia,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: drusoeugenia
+cn: Damiano
+sn: Onio
+mail: lazzarobasso@beccaria.org
+userPassword: azNHUlg1a01lSQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=petruzzinico,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: petruzzinico
+cn: Irma
+sn: Argurio
+mail: fagottovirgilio@montanari.it
+userPassword: NFYzbzJBR3FKUQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=morlacchimichelangelo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: morlacchimichelangelo
+cn: Federica
+sn: Sagese
+mail: ortolanisalvatore@vodafone.it
+userPassword: MFN6bFJ2a2Ezbw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=rporcellato,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: rporcellato
+cn: Vittorio
+sn: Saragat
+mail: bgreggio@ferrante.it
+userPassword: WnNVNmxleUI0cA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=coluccioparisi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: coluccioparisi
+cn: Girolamo
+sn: Gregorio
+mail: mattiagabrieli@finzi-raimondi.it
+userPassword: R09uZ3BGR2UxRg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=busonivittorio,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: busonivittorio
+cn: Alina
+sn: Pizziol
+mail: perinilorenzo@tin.it
+userPassword: S3E1NnNWbGlBRw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=stellacarullo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: stellacarullo
+cn: Gioele
+sn: Giannone
+mail: gabriellapontecorvo@romano.org
+userPassword: RTBNS2cyckZCRw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=fedele69,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: fedele69
+cn: Giulietta
+sn: Riccardi
+mail: fiorenzo10@goldoni-sagese.it
+userPassword: ZHJOZ01HNnQySw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=bruno75,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: bruno75
+cn: Nino
+sn: Pisano
+mail: liviosonnino@tin.it
+userPassword: ZmZsdmQ2dTg0Qg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ugobaracca,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ugobaracca
+cn: Ludovico
+sn: Montanariello
+mail: cristinacardano@caruso.it
+userPassword: bFdoSmZ0bGE5OA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=marissaasmundo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: marissaasmundo
+cn: Cesare
+sn: Zacchia
+mail: renaultvincentio@gmail.com
+userPassword: bUdSRXZmWnU1RA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ymaspero,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ymaspero
+cn: Donatella
+sn: Papafava
+mail: nprocacci@giolitti.it
+userPassword: QVlwSE13QWVqMA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=boccherinigiancarlo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: boccherinigiancarlo
+cn: Pina
+sn: Costanzi
+mail: romolotomasetti@sermonti.eu
+userPassword: bzlUMDdNYm9iag==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ludovico59,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ludovico59
+cn: Antonina
+sn: Bettin
+mail: milenafilippelli@tin.it
+userPassword: bU1lb2pwNGU3Wg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=biagiottigiuseppina,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: biagiottigiuseppina
+cn: Veronica
+sn: Monti
+mail: giorgia96@hotmail.it
+userPassword: ME82UVNIbXVHYQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=jacopopaolini,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: jacopopaolini
+cn: Elladio
+sn: Toldo
+mail: vserao@alboni.it
+userPassword: MXI0dUd2dnZ1eA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=marianagullotta,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: marianagullotta
+cn: Lilla
+sn: Ruggeri
+mail: giacomoiacovelli@libero.it
+userPassword: NGtOUFJHdlZFRA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=donatointeriano,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: donatointeriano
+cn: Ermenegildo
+sn: Farinelli
+mail: ettatarchetti@agostinelli.org
+userPassword: M0F1c3hjd2JKNw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=zamoraniadelmo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: zamoraniadelmo
+cn: Graziano
+sn: Mattarella
+mail: fiorino61@foletti-lopresti.it
+userPassword: NE9qcms2MEt1RA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=nico35,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: nico35
+cn: Luchino
+sn: Malpighi
+mail: francogreco@fagotto.it
+userPassword: NUlxQUFicnRwSA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=atornatore,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: atornatore
+cn: Tmljb2zDsg==
+sn: Gramsci
+mail: fiorucciromina@tiscali.it
+userPassword: MzE1Rnp1dDRYbw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=giuliasagredo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: giuliasagredo
+cn: Patrizia
+sn: Zito
+mail: pacettivenancio@live.com
+userPassword: N2Zjc1BRTnNDYQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=libertocapecchi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: libertocapecchi
+cn: Uberto
+sn: Toninelli
+mail: cabotogiuseppe@poste.it
+userPassword: WTkxSmpWMkxXYQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=alfredo51,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: alfredo51
+cn: Jolanda
+sn: Malacarne
+mail: luciano24@grimani.com
+userPassword: UU1weEdWU0U2SA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=fabrizia50,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: fabrizia50
+cn: Dante
+sn: Schiavone
+mail: mmoresi@satta.org
+userPassword: NXF3YTRDT3BWQg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=klopresti,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: klopresti
+cn: Vittorio
+sn: Vecoli
+mail: adelmo13@hotmail.com
+userPassword: VWg5QVZpaWVWZQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=elisagaggini,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: elisagaggini
+cn: Giacomo
+sn: Aulenti
+mail: porzioberenice@tim.it
+userPassword: TzRUZTR5RkE5Sw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=iaporti,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: iaporti
+cn: Amalia
+sn: Ajello
+mail: gbellini@yahoo.com
+userPassword: NVF2bkRha2dOSw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=nricolfi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: nricolfi
+cn: Luca
+sn: Trombetta
+mail: cmancini@tele2.it
+userPassword: VGIwRDhkTXdydw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=calcedonioargenti,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: calcedonioargenti
+cn: Marco
+sn: Fracci
+mail: enzo60@battelli-cesarotti.com
+userPassword: aGFIRUxXT3M5OQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=bianchinilivia,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: bianchinilivia
+cn: Germana
+sn: Respighi
+mail: catenazzicaterina@gregori.org
+userPassword: QzJZUEF3WTlWMQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=martinobembo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: martinobembo
+cn: Sante
+sn: Infantino
+mail: corradogucci@gussoni-zoppetto.com
+userPassword: UkpPVk9FV25MMA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=bianca05,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: bianca05
+cn: Nanni
+sn: Carpaccio
+mail: rosalia02@vigorelli-marinetti.eu
+userPassword: Qk50R0NlcUI0Wg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ippaziooliboni,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ippaziooliboni
+cn: Ivan
+sn: Catenazzi
+mail: alessandro38@gmail.com
+userPassword: ZlF1Q0dVcVg4Qw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=dina11,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: dina11
+cn: Roberta
+sn: Pometta
+mail: brensi@casale-iannotti.it
+userPassword: MTcxVktQdENtdg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=rscaramucci,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: rscaramucci
+cn: Maurizio
+sn: Tencalla
+mail: donato90@cagnin.it
+userPassword: M1hSbmdzenRubw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=cecilia80,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: cecilia80
+cn: Cecilia
+sn: Paganini
+mail: sermonticristina@alice.it
+userPassword: TEVvWWVkOGYwQg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=fagianinanni,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: fagianinanni
+cn: Marcella
+sn: Eco
+mail: gtresoldi@trobbiani-rienzo.com
+userPassword: ZzR0TnJyYUc3bw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=nbrancaccio,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: nbrancaccio
+cn: Gianluigi
+sn: Qm9sZMO5
+mail: agnesidionigi@libero.it
+userPassword: ZDFKQXV3dVo3OQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=fattorilodovico,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: fattorilodovico
+cn: Victoria
+sn: Guarneri
+mail: adele96@cugia.com
+userPassword: M1g5QmdtdUROWA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=zturchi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: zturchi
+cn: Romina
+sn: Ferrabosco
+mail: licia51@yahoo.com
+userPassword: MVREcnBlVTVUWA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=mocenigodaria,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: mocenigodaria
+cn: Antonello
+sn: Calvo
+mail: alinabova@fastwebnet.it
+userPassword: N3J0VnE0R2l4Sw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ilaria19,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ilaria19
+cn: Fabrizia
+sn: Vismara
+mail: trentingiovanni@carriera-scotto.it
+userPassword: bHVCZFA4bUc0MQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=gianfrancescocarnera,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: gianfrancescocarnera
+cn: Martina
+sn: Mazzi
+mail: kbeccheria@tin.it
+userPassword: OXdWUWJESGU3eg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=rosariasgalambro,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: rosariasgalambro
+cn: Paoletta
+sn: Munari
+mail: paride89@libero.it
+userPassword: OUV0MnpGUTZvTw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=danilo59,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: danilo59
+cn: Elena
+sn: Vivaldi
+mail: ezio32@poste.it
+userPassword: MW9yNVdTMEdpWA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=raffaellogaribaldi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: raffaellogaribaldi
+cn: Lorenzo
+sn: Castioni
+mail: fredomancini@cicala-trebbi.it
+userPassword: WDFCMDU0OHFaVQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=giorgiameucci,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: giorgiameucci
+cn: Calogero
+sn: Rossini
+mail: gianninifiorenzo@tomei-bossi.eu
+userPassword: bWNYWDNBT3ZjVw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=bsolimena,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: bsolimena
+cn: Etta
+sn: Trevisani
+mail: toninotrentini@yahoo.com
+userPassword: MmhwcEE5d0UxTw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=achillefo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: achillefo
+cn: Elvira
+sn: Borromini
+mail: orlando77@petralli.com
+userPassword: TVREMmZmTkozQw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=faustoaccardo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: faustoaccardo
+cn: Ermanno
+sn: Monti
+mail: alessandragalvani@yahoo.com
+userPassword: blU4QjlrQXp6dw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=gianni38,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: gianni38
+cn: Eraldo
+sn: Dibiasi
+mail: pierpaolo29@hotmail.com
+userPassword: WUsxUmtRMGJjSg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ferdinandoomma,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ferdinandoomma
+cn: Gemma
+sn: Turrini
+mail: aurorasolimena@armani.org
+userPassword: STZCVnU5SnM0dw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=niccolo97,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: niccolo97
+cn: Pierpaolo
+sn: Scalfaro
+mail: gianettilucio@tin.it
+userPassword: T0IyUFoyS3pnNA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=giorgia63,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: giorgia63
+cn: Ivo
+sn: Angeli
+mail: biagiottisalvatore@hotmail.it
+userPassword: Q3lQVndEQ2QwYg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=piergiuseppe65,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: piergiuseppe65
+cn: Sergius
+sn: Columbo
+mail: lamberto54@tim.it
+userPassword: MGxrdDdHZXlobQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=vergerioamico,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: vergerioamico
+cn: Renata
+sn: Bellocchio
+mail: qgiannone@soprano.com
+userPassword: bFdZQml5THE2RA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=jpedroni,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: jpedroni
+cn: Eliana
+sn: Agostini
+mail: annettaceravolo@vodafone.it
+userPassword: eDdqVzhaeG9tMQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=sbenigni,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: sbenigni
+cn: Luchino
+sn: Bertoni
+mail: grecogustavo@gmail.com
+userPassword: d2oxVUg1TGJyNg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=xlombardo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: xlombardo
+cn: Camillo
+sn: Benussi
+mail: luciano70@hotmail.com
+userPassword: T0piYlNoT1E4Yw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=danielericci,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: danielericci
+cn: Renata
+sn: Briccialdi
+mail: letizia50@yahoo.com
+userPassword: MmNBY21jZFBVNQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=fabriziatrincavelli,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: fabriziatrincavelli
+cn: Gianna
+sn: Sorrentino
+mail: panfilomarini@balotelli-taliercio.it
+userPassword: YzlCZ0hjTDBOMQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=procaccitina,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: procaccitina
+cn: Pierangelo
+sn: Bresciani
+mail: npetrocelli@tremonti.it
+userPassword: YVFVNkNMR2tRNA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=isabonaventura,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: isabonaventura
+cn: Giulietta
+sn: Ostinelli
+mail: comeriatoflavio@chittolini.it
+userPassword: N2xEejV1RmxwNw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=jrizzo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: jrizzo
+cn: Aldo
+sn: Ceravolo
+mail: forzasilvia@cilea.net
+userPassword: cmIwZ3R3RUg2Ug==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=grimaniorlando,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: grimaniorlando
+cn: Valeria
+sn: Montesano
+mail: arturo73@alice.it
+userPassword: VmJ1QVdQcE44Yg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=luigina09,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: luigina09
+cn: Cirillo
+sn: Scandone
+mail: michelangelo93@gmail.com
+userPassword: MFpEV2lOaXdydg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=tanzinipiero,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: tanzinipiero
+cn: Dino
+sn: Magrassi
+mail: guidottialdo@libero.it
+userPassword: N1ZDME90Zm1iQQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=bassifrancesco,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: bassifrancesco
+cn: Gianni
+sn: Orsini
+mail: marco65@tim.it
+userPassword: TE1pRWhobWMwRw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=silvia75,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: silvia75
+cn: Claudia
+sn: Catenazzi
+mail: campanellaantonella@hotmail.com
+userPassword: c2NTa3h5YXQwYQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=camillostrangio,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: camillostrangio
+cn: Giampaolo
+sn: Bonatti
+mail: polizzimarcantonio@fastwebnet.it
+userPassword: SWY1YXlHOXozeg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=arnaldopietrangeli,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: arnaldopietrangeli
+cn: Marco
+sn: Rismondo
+mail: baccio94@catalano.com
+userPassword: aUJ0WFVWSGk2Vw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=fabriziolga,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: fabriziolga
+cn: Ottone
+sn: Accardo
+mail: virgilioromana@yahoo.com
+userPassword: M0tvYmpIYmpQQw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=rodolfo37,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: rodolfo37
+cn: Beatrice
+sn: Mogherini
+mail: capecchigianpietro@hotmail.com
+userPassword: RGFPUTRYb0hzbg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=pellegrinoleopardi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: pellegrinoleopardi
+cn: Sophia
+sn: Zamengo
+mail: martinellieleanora@farina-paltrinieri.eu
+userPassword: cDNQQ1g0cFZ6ag==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ettamazzeo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ettamazzeo
+cn: Giulia
+sn: Fantozzi
+mail: saveriocallegaro@gmail.com
+userPassword: NDhjSjdRZHl6Vw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=stellabaglioni,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: stellabaglioni
+cn: Marcella
+sn: Lovato
+mail: geronimo39@raimondi-ligorio.com
+userPassword: ODFxcmJ3cHdEeQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=amanda98,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: amanda98
+cn: Rossana
+sn: Falcone
+mail: onorbiato@maglio.com
+userPassword: MFpwVW4wWVJSOQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=massimo92,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: massimo92
+cn: Achille
+sn: Vergerio
+mail: qbonomo@yahoo.com
+userPassword: Tk5OVXBSNWJpMw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=atenulfguidotti,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: atenulfguidotti
+cn: Fredo
+sn: Castelli
+mail: roberta49@saffi-caironi.net
+userPassword: bEpYVmVGVEgyaw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=serenatomasini,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: serenatomasini
+cn: Vincenzo
+sn: Barcaccia
+mail: traviadionigi@gmail.com
+userPassword: NHZoNlFjR2doRA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=marzorativictoria,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: marzorativictoria
+cn: Sole
+sn: Tron
+mail: viridiana09@valentino.it
+userPassword: akpzOUlTZUlKcQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=gdonatoni,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: gdonatoni
+cn: Livia
+sn: Boitani
+mail: griselda76@poste.it
+userPassword: U2RwZ1NvRm5rOA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=alderano58,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: alderano58
+cn: Laura
+sn: Broggini
+mail: zprocacci@bosurgi-argento.com
+userPassword: S3pXY3N5eUg0WQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=benito70,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: benito70
+cn: Orazio
+sn: Cerutti
+mail: niccolo74@tim.it
+userPassword: VkI2YmZYb1FoTQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=toni09,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: toni09
+cn: Benito
+sn: Esposito
+mail: laldobrandi@casalodi-gualtieri.org
+userPassword: NEVGWkJtcWRYOA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=kcimini,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: kcimini
+cn: Gian
+sn: Monti
+mail: pacellidomenico@poste.it
+userPassword: alcwZm9IdlY5NQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=chechigianpietro,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: chechigianpietro
+cn: Fiorino
+sn: Tron
+mail: gaetano59@tiscali.it
+userPassword: Z2hVa0J4azBtOA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=qmazzacurati,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: qmazzacurati
+cn: Galasso
+sn: Gagliano
+mail: bernardocomolli@campanella.com
+userPassword: OEF6Q3B5QTNLRg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ruggieriarnaldo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ruggieriarnaldo
+cn: Flavio
+sn: Tosto
+mail: gdonarelli@zanichelli.com
+userPassword: OVZUaGFvVmFPbQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=pizziolrosalia,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: pizziolrosalia
+cn: Eliana
+sn: Cattaneo
+mail: ida02@tiscali.it
+userPassword: NWFYNERsNnRiYw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ianichini,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ianichini
+cn: Marco
+sn: Sollima
+mail: lantonucci@scaramucci.it
+userPassword: eTc0QU1JYWk4Vw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=salvicollodi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: salvicollodi
+cn: Sophia
+sn: Musatti
+mail: maurizioforza@libero.it
+userPassword: RTMxRFJxQkhNMQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=patriziocamuccini,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: patriziocamuccini
+cn: Vincentio
+sn: Galeati
+mail: pduse@poste.it
+userPassword: NnA0WXBaVzg0OQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=belliniamanda,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: belliniamanda
+cn: Gionata
+sn: Faugno
+mail: nicoletta96@boitani.it
+userPassword: eWpTb013ejU4bg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=mfantozzi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: mfantozzi
+cn: Baccio
+sn: Fieramosca
+mail: saurolorenzo@gmail.com
+userPassword: amRPZFN3VXFaNQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=etresoldi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: etresoldi
+cn: Melania
+sn: Dossi
+mail: lolita64@mozart.net
+userPassword: bGxjaXRFbEw2VQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=kpolesel,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: kpolesel
+cn: Mario
+sn: Monti
+mail: manichini@tim.it
+userPassword: NVhuWENMb2JVMQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=femanuelli,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: femanuelli
+cn: Lucia
+sn: Bevilacqua
+mail: mario38@alice.it
+userPassword: REtGb0drQlExaA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ortolaniveronica,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ortolaniveronica
+cn: Guarino
+sn: Pedroni
+mail: loretta21@libero.it
+userPassword: NVY5RWJvejVCeA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=telemaco02,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: telemaco02
+cn: Rosario
+sn: Pisani
+mail: carmelomaccanelli@libero.it
+userPassword: dGhCSEN4d3I2dw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ricolfipasqual,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ricolfipasqual
+cn: Ramona
+sn: Piccio
+mail: fberengario@garzoni-tomasetti.com
+userPassword: RnVIZTM3UTlNMw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=irmaguarana,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: irmaguarana
+cn: Roberta
+sn: Bernini
+mail: npalumbo@schiaparelli.it
+userPassword: NjhxZU1wTUdwWQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=tcampise,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: tcampise
+cn: Letizia
+sn: Falier
+mail: ciciliadonatello@perozzo-boaga.eu
+userPassword: NjVDdkdqcXppWA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=mnicolucci,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: mnicolucci
+cn: Valeria
+sn: Aloisio
+mail: raffaeleginesio@tin.it
+userPassword: TWhOcDBLTnZZQg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=mercedes67,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: mercedes67
+cn: Santino
+sn: Vidoni
+mail: navogadro@tiscali.it
+userPassword: ZTk3N2dOYXRTWA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=mutiluigi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: mutiluigi
+cn: Adriano
+sn: Norbiato
+mail: argurioaurora@tim.it
+userPassword: NGpVYThRR2ZtQQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ballapaoletta,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ballapaoletta
+cn: Cesare
+sn: Loredan
+mail: grazianocasalodi@libero.it
+userPassword: VDVMZ0gyTGhMaA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=griseldacalarco,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: griseldacalarco
+cn: Paride
+sn: Turchi
+mail: rominabassi@pizzetti.org
+userPassword: MnpHUGxqSHFSdA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=vanessatrussardi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: vanessatrussardi
+cn: Nedda
+sn: Condoleo
+mail: virginia15@guicciardini.it
+userPassword: Mkh0SlJTVWJxbQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=fulvioleopardi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: fulvioleopardi
+cn: Galasso
+sn: Bevilacqua
+mail: ruggero66@brunello-innocenti.it
+userPassword: Q0pCSFBlY3BsNA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=vprocacci,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: vprocacci
+cn: Ciro
+sn: Condoleo
+mail: jbarcaccia@ruberto-bottaro.it
+userPassword: bEdDMXI4VWRvOQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=calcedoniotravaglio,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: calcedoniotravaglio
+cn: Ermes
+sn: Guicciardini
+mail: carla87@libero.it
+userPassword: M1ZqcVAzN2VBdA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=dleonetti,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: dleonetti
+cn: Stefano
+sn: Ostinelli
+mail: troisigreca@liverotti-taliani.it
+userPassword: U01mT2pWdUcycw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ninetta35,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ninetta35
+cn: Pompeo
+sn: Lombroso
+mail: emilio58@gmail.com
+userPassword: OFhFZDBac1JEQw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=cusanosimone,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: cusanosimone
+cn: Sophia
+sn: Paruta
+mail: michelettogagliano@catalano.it
+userPassword: ZFlCTnVZVnRmNg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=gustavobrugnaro,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: gustavobrugnaro
+cn: Monica
+sn: Bompiani
+mail: antoninoerrigo@libero.it
+userPassword: NFRodGY0RlV0TQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=malboni,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: malboni
+cn: Luisa
+sn: Condoleo
+mail: campanellamassimo@outlook.com
+userPassword: dTlYc3RTUXV4Vw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=gian14,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: gian14
+cn: Luigina
+sn: Tartini
+mail: rosasimeoni@tele2.it
+userPassword: d2hpU2lFS0YweQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=gianmarco02,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: gianmarco02
+cn: Marcello
+sn: Barzini
+mail: ermes94@gmail.com
+userPassword: MDdibWRVTWFLVw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=enzo25,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: enzo25
+cn: Fortunata
+sn: Spinelli
+mail: lorenzobova@tin.it
+userPassword: ejdNRGdpWlFHMg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=gemmamascheroni,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: gemmamascheroni
+cn: Benito
+sn: Pederiva
+mail: giradelloarmando@tele2.it
+userPassword: MWhyZTlVVnhCMQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=galasso61,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: galasso61
+cn: Giada
+sn: Valier
+mail: virgiliogranatelli@vodafone.it
+userPassword: RlQyOXVTWXM2NA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=vincenzasermonti,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: vincenzasermonti
+cn: Claudio
+sn: Valmarana
+mail: bianca81@inzaghi-corradi.com
+userPassword: RnYxUDlhblc2cg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=gualandigustavo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: gualandigustavo
+cn: Fabrizio
+sn: Lerner
+mail: gabrieleceravolo@malipiero.it
+userPassword: WGZwdkI2WHRRYQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=wcignaroli,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: wcignaroli
+cn: Graziella
+sn: Dossi
+mail: jtravaglio@natta-pausini.it
+userPassword: YW1EcENHVVkzVw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=pina32,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: pina32
+cn: Vittorio
+sn: Beccaria
+mail: tatianaabbagnale@beccaria.net
+userPassword: ZDdUWERYRm1zaA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=angelicaiacovelli,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: angelicaiacovelli
+cn: Vanessa
+sn: Ferraris
+mail: spinamonte@hotmail.it
+userPassword: TzQzek9QZ0NSbQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=migliaccioagostino,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: migliaccioagostino
+cn: Marissa
+sn: Angiolello
+mail: pinamontecoriolano@gmail.com
+userPassword: MElhOUc4cFdkaw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ilaria94,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ilaria94
+cn: Gioacchino
+sn: Modiano
+mail: michelemimun@bettoni.com
+userPassword: M0lsd0RQR21oag==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=lazzaro97,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: lazzaro97
+cn: Sandra
+sn: Taliercio
+mail: kcomisso@pagnotto.it
+userPassword: ZjkwdzlBbVkzRA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=azeglio36,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: azeglio36
+cn: Giacinto
+sn: Aloisio
+mail: pierluigi22@gravina.it
+userPassword: NFZJV3I4eU45OA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=leopoldo03,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: leopoldo03
+cn: Luigi
+sn: Abatantuono
+mail: bbonanno@trebbi-panicucci.it
+userPassword: ajNYU0s2T3I5NA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=dionigi06,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: dionigi06
+cn: Galasso
+sn: Pistoletto
+mail: patrizia14@gmail.com
+userPassword: MWl4TEUxeGRKVA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ilariacomolli,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ilariacomolli
+cn: Ninetta
+sn: Q2Fzc2Fyw6A=
+mail: uberto14@samele.org
+userPassword: eTYwbVpOdTZwcQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=mannoiaadamo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: mannoiaadamo
+cn: Lazzaro
+sn: Foconi
+mail: fabriziopalumbo@strangio-spinelli.net
+userPassword: cFlZRUtBbWI3cg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=evangelistazecchini,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: evangelistazecchini
+cn: Pierangelo
+sn: Cesarotti
+mail: danilo71@tiscali.it
+userPassword: Q1VCTlo0Qm5jMA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=romolo86,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: romolo86
+cn: Lando
+sn: Venditti
+mail: loredanabaggio@yahoo.com
+userPassword: NlRXdExqQ3ZtSw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=brennatoni,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: brennatoni
+cn: Galasso
+sn: Ruggieri
+mail: palmisanodonatello@outlook.com
+userPassword: M29LOEZZbGhTMQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=zaccagninimatteo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: zaccagninimatteo
+cn: Amedeo
+sn: Ciani
+mail: vantonacci@pucci.com
+userPassword: QTZIUjBMNGpkbw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=cundaripaolo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: cundaripaolo
+cn: Gianluigi
+sn: Gaiatto
+mail: cpaltrinieri@libero.it
+userPassword: djBWMVFxaG1Sbw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=hrespighi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: hrespighi
+cn: Isabella
+sn: Ciani
+mail: romana82@hotmail.com
+userPassword: aVA2UThxa21WNg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=lsollima,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: lsollima
+cn: Marissa
+sn: Crisafulli
+mail: mauriziogentili@hotmail.it
+userPassword: aUhiTVJvcnE0Tg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=sgreco,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: sgreco
+cn: Adelasia
+sn: Jilani
+mail: rosario94@tin.it
+userPassword: dkZIWVY3WnA3dg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=marisatotino,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: marisatotino
+cn: Sergius
+sn: Gualtieri
+mail: zacchiamichelotto@yahoo.com
+userPassword: Tk9ZdmhqaDQxZg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=imelda19,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: imelda19
+cn: Pietro
+sn: Comolli
+mail: pistolettovincenzo@maglio.org
+userPassword: NWVQeWlEMlM4VA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ebonaventura,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ebonaventura
+cn: Alfio
+sn: Guarana
+mail: loretta55@bosio-malpighi.it
+userPassword: UUFIV3R4VUcybQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=imennea,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: imennea
+cn: Vincenza
+sn: Beffa
+mail: argentomilo@gmail.com
+userPassword: NGtvVGtPQWhMdg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=eliana04,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: eliana04
+cn: Fiorino
+sn: Mascheroni
+mail: pierangeloantonacci@fastwebnet.it
+userPassword: em9OYzM5UnBtMQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=borzomigreca,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: borzomigreca
+cn: Osvaldo
+sn: Adinolfi
+mail: priscillamicca@yahoo.com
+userPassword: SDlSTVlkQndZQQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=leonepatrizia,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: leonepatrizia
+cn: Fulvio
+sn: Ciani
+mail: rosariopetrocelli@pinamonte-bignardi.com
+userPassword: ZTQyS3QyRXAzUw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=troccabonella,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: troccabonella
+cn: Claudio
+sn: Siffredi
+mail: stella68@yahoo.com
+userPassword: MWY3MUpNNmhvaA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=mgrassi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: mgrassi
+cn: Corrado
+sn: Trebbi
+mail: veronicaalonzi@prada.com
+userPassword: NzJqb0h0b2pDVg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=nmorgagni,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: nmorgagni
+cn: Ruggiero
+sn: Petrucelli
+mail: marianoplatini@caboto-tanzini.org
+userPassword: ODF1SW5wWG5kVw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ylettiere,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ylettiere
+cn: Emma
+sn: Calvo
+mail: hugo11@poste.it
+userPassword: MlpTZmplSG5rNA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=tbianchi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: tbianchi
+cn: Agostino
+sn: Romano
+mail: ngaltarossa@virgilio.it
+userPassword: ODhQVmhSQ21mYw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=equerini,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: equerini
+cn: Lorenzo
+sn: Rosiello
+mail: jcalvo@gmail.com
+userPassword: cTdLb1VoUk44Zw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=amaliamarsili,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: amaliamarsili
+cn: Adriano
+sn: Tartaglia
+mail: mauriziogritti@live.com
+userPassword: cE11ME53ZjZuNw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=baldassare66,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: baldassare66
+cn: Diana
+sn: Bersani
+mail: ibocelli@outlook.com
+userPassword: VU9RbW5YRG55MA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=zaccosilvio,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: zaccosilvio
+cn: Tiziano
+sn: Gonzaga
+mail: abrunello@libero.it
+userPassword: NDAzOUh1aXJNZg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=serenarossi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: serenarossi
+cn: Pasqual
+sn: Marinetti
+mail: guaranagiancarlo@poste.it
+userPassword: MnJKU0xod2x3Tw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=flavio39,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: flavio39
+cn: Mirko
+sn: Pignatti
+mail: romanoroberta@libero.it
+userPassword: dHBkTzJVRGh4bQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=vmoresi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: vmoresi
+cn: Romeo
+sn: Busoni
+mail: uberto24@russo.it
+userPassword: YnVZWVJ5cnY3cQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=tizianabragadin,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: tizianabragadin
+cn: Margherita
+sn: Modigliani
+mail: livioromagnoli@balbo-romagnoli.it
+userPassword: cVk3SXlONmNYbw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=errigolando,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: errigolando
+cn: Livio
+sn: Callegaro
+mail: xtron@ginese-semitecolo.it
+userPassword: MlVUUXZVVXVWTg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=pierorossini,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: pierorossini
+cn: Santino
+sn: Baroffio
+mail: lpisacane@gmail.com
+userPassword: UFZUa3VWNG8yMg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=lisa59,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: lisa59
+cn: Maria
+sn: Fanucci
+mail: giacomofuseli@pizzo.it
+userPassword: WUdJTXF4bEs5ZQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=jcociarelli,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: jcociarelli
+cn: Giada
+sn: Ungaretti
+mail: grecoolivetti@libero.it
+userPassword: MFRYbWVkeU9XVQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=fdallara,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: fdallara
+cn: Temistocle
+sn: Bertolucci
+mail: wbossi@vodafone.it
+userPassword: SlQ4SkZJYjM5MA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=lversace,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: lversace
+cn: Sandra
+sn: Caccioppoli
+mail: silvestrijacopo@vodafone.it
+userPassword: NEdVekRoYXA2dA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=lpratesi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: lpratesi
+cn: Fausto
+sn: Babbo
+mail: turrinitoni@vodafone.it
+userPassword: MFRWUkJ6WFJkaQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=collinaliana,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: collinaliana
+cn: Maria
+sn: Manunta
+mail: ludovica10@gmail.com
+userPassword: cmNHVDRmeE4wMQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=tiziana49,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: tiziana49
+cn: Claudia
+sn: Argento
+mail: greca99@caboto.com
+userPassword: QjQyS3JibjA0ZQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=olga75,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: olga75
+cn: Piersanti
+sn: Bramante
+mail: alighierialderano@tin.it
+userPassword: NzYxR2xPbFlZOA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=cainerorosario,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: cainerorosario
+cn: Isabella
+sn: Rismondo
+mail: dparuta@gmail.com
+userPassword: REMwMWhHRnBCSg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=neddamontessori,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: neddamontessori
+cn: Giancarlo
+sn: Pascarella
+mail: icremonesi@tin.it
+userPassword: eDJJTEkycHl4OQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=gianluigi57,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: gianluigi57
+cn: Manuel
+sn: Carfagna
+mail: fermietta@nitto.it
+userPassword: UW1WSmE3Sng3eg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=cleblanc,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: cleblanc
+cn: Filippo
+sn: Tommaseo
+mail: ornella86@tamburello-fieramosca.it
+userPassword: RDg4VnpRQ2U0aA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=olgagemito,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: olgagemito
+cn: Valerio
+sn: Dalla
+mail: michelaoffredi@live.com
+userPassword: NWVKcXlldXpGSQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=aria25,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: aria25
+cn: Ludovico
+sn: Garzoni
+mail: romitirosina@zetticci.com
+userPassword: YThXMlRheTd4Mw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=nico52,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: nico52
+cn: Giovanni
+sn: Errani
+mail: barozzibenito@gmail.com
+userPassword: WDFBcDEzVHdmNg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=renatalovato,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: renatalovato
+cn: Annunziata
+sn: Necci
+mail: guidopinamonte@hotmail.it
+userPassword: MlpxRGRIbG1OWA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=imonduzzi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: imonduzzi
+cn: Lazzaro
+sn: Magnani
+mail: niccolomaderna@filippini.it
+userPassword: VW5aSXBMRGhzMQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=mircomonduzzi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: mircomonduzzi
+cn: Ernesto
+sn: Antonacci
+mail: tozzogaetano@fastwebnet.it
+userPassword: N0xTMmtTZVo4cg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ualoisio,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ualoisio
+cn: Francesca
+sn: Pisano
+mail: ugomanacorda@poste.it
+userPassword: MmVQT1poVTljaQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=michelotto58,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: michelotto58
+cn: Alberico
+sn: Bernardini
+mail: yspallanzani@libero.it
+userPassword: cDZuV1BDam9qMA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=liguorisalvi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: liguorisalvi
+cn: Elvira
+sn: Sforza
+mail: schiavoclelia@hotmail.it
+userPassword: eGk1MzFKem1VOA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=vceravolo,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: vceravolo
+cn: Gianni
+sn: Balotelli
+mail: paride07@gmail.com
+userPassword: WkcxN2xaZUlHYw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=emilio81,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: emilio81
+cn: Bianca
+sn: Bulzoni
+mail: goffredoruggieri@hotmail.it
+userPassword: OUNXUXlrUm9Pdg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=dantegalilei,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: dantegalilei
+cn: Sante
+sn: Sibilia
+mail: ionio@live.com
+userPassword: MFRFN2J4cnpXTA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=maurizio02,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: maurizio02
+cn: Sylvia
+sn: Morosini
+mail: angelo08@tele2.it
+userPassword: RDNOU0laTXh2eA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=eziomonteverdi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: eziomonteverdi
+cn: Evangelista
+sn: Briccialdi
+mail: gucciluisa@hotmail.com
+userPassword: emc4QTh3OXowRA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=roman14,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: roman14
+cn: Amico
+sn: Rosselli
+mail: goffredo94@pisani.it
+userPassword: VjA2RFlTTmtVOQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=kgaluppi,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: kgaluppi
+cn: Calcedonio
+sn: Agnesi
+mail: cecilia72@fastwebnet.it
+userPassword: emtXNXE4RWp5WA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ranieri97,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ranieri97
+cn: Alessandro
+sn: Botta
+mail: wbruscantini@tiscali.it
+userPassword: N3FzV05KVHF2Rw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=iostinelli,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: iostinelli
+cn: Piermaria
+sn: Frescobaldi
+mail: ybiagiotti@ammaniti.it
+userPassword: TmtNSVBjcUg2dA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=amalia82,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: amalia82
+cn: Vittorio
+sn: Monicelli
+mail: isabellasermonti@virgilio.it
+userPassword: OUk0eW1DNVc2eQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=rosinaligorio,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: rosinaligorio
+cn: Fredo
+sn: Leoncavallo
+mail: maria18@libero.it
+userPassword: aW9xdWVhQmZiNg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=treccanicoluccio,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: treccanicoluccio
+cn: Gaetano
+sn: Raurica
+mail: sandra86@salvo-ceravolo.org
+userPassword: MGpKdVI1NzFzVA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=monduzzijolanda,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: monduzzijolanda
+cn: Ernesto
+sn: Ferrazzi
+mail: pasolinicassandra@caccioppoli.it
+userPassword: ZFlvVXprV0o5ZQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=emma42,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: emma42
+cn: Venancio
+sn: Costanzi
+mail: ippazio97@virgilio.it
+userPassword: N0tNWThieWFzUw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=susannacaccioppoli,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: susannacaccioppoli
+cn: Ludovica
+sn: Grossi
+mail: lisaboaga@tim.it
+userPassword: NTBzTU92RUp6YQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=bsraffa,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: bsraffa
+cn: Cesare
+sn: Gori
+mail: ccalarco@tim.it
+userPassword: QUZqUHF4RnE3VQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=tonistogabriele,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: tonistogabriele
+cn: Flavia
+sn: Traetta
+mail: ffantozzi@yahoo.com
+userPassword: ekpJamQxRzc1UQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=ucicilia,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: ucicilia
+cn: Paloma
+sn: Lerner
+mail: giuliacoppola@turrini.com
+userPassword: QVJLMElYYnMwZg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=vtaccola,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: vtaccola
+cn: Melissa
+sn: Gravina
+mail: ivan51@comolli-papetti.org
+userPassword: dmgwSXd3ZFJjUA==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=carlo18,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: carlo18
+cn: Riccardo
+sn: Bajamonti
+mail: tbarsanti@pietrangeli.org
+userPassword: Qmp0UFAydUE2eg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=mastroiannimarco,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: mastroiannimarco
+cn: Silvio
+sn: Foscari
+mail: pepeguarino@outlook.com
+userPassword: OGxMVXRISW43Nw==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=jbersani,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: jbersani
+cn: Fabrizia
+sn: Capuana
+mail: zpraga@outlook.com
+userPassword: Mmk5elJlSHkxUg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=alina09,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: alina09
+cn: Silvestro
+sn: Nibali
+mail: xbonino@moneta-bramante.org
+userPassword: dXdZT2k0UG44OQ==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=rciani,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: rciani
+cn: Antonina
+sn: Garzoni
+mail: nina78@libero.it
+userPassword: ZmZWUHNRTkY4cg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
+dn: uid=adelasia42,dc=ldap,dc=vcc,dc=unige,dc=it
+uid: adelasia42
+cn: Gioachino
+sn: Bembo
+mail: ugolino07@tartini.eu
+userPassword: ZjhWcUY2b3VoTg==
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: giteaAdmin
+
